@@ -3,7 +3,7 @@ import authApi from './authApi'
 import widgetApi from './widgetApi';
 
 
-export const base_url = "https://demo.ox-sys.com/"
+export const base_url = "URL"
 
 export const satellite = axios.create({
     baseURL: base_url,
