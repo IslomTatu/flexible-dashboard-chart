@@ -1,0 +1,112 @@
+name: sales
+propeties:
+  sales_by_location:
+      allowStyles: [basic_line, basic_column, stacked, pie, spiderweb]
+      filter: location
+      columns:
+          - { name: location}
+          - { name: net_sales, hasCurrency: true}
+      styles:
+          count:
+              - { name: zone }
+              - { name: net_sales, hasCurrency: true}
+
+  sales_by_brand:
+      filter: brand
+      allowStyles: [basic_line, basic_column, stacked, pie, spiderweb]
+      columns:
+          - { name: brand}
+          - { name: net_sales, hasCurrency: true}
+      styles:
+          count:
+              - { name: zone }
+              - { name: net_sales, hasCurrency: true}
+  sales_by_seller:
+      filter: seller
+      allowStyles: [basic_line, basic_column, stacked, pie, spiderweb]
+      columns:
+          - { name: seller}
+          - { name: net_sales, hasCurrency: true}
+      styles:
+          count:
+              - { name: zone }
+              - { name: net_sales, hasCurrency: true}
+  sales_by_customer:
+      filter: customer
+      allowStyles: [basic_line, basic_column, stacked, pie, spiderweb]
+      columns:
+          - { name: customer}
+          - { name: net_sales, hasCurrency: true}
+      styles:
+          count:
+              - { name: zone }
+              - { name: net_sales, hasCurrency: true}
+  sales_by_shift:
+      filter: cashdesk
+      allowStyles: [basic_line]
+      columns:
+          - { name: cashdesk}
+          - { name: net_sales, hasCurrency: true}
+  sales_payment_method_by_cashdesk:
+      filter: cashdesk
+      allowStyles: [table]
+      columns:
+          - { name: payment_method}
+          - { name: net_sales, hasCurrency: true}
+  sales_by_sqm:
+      filter: location
+      allowStyles: [count]
+      columns:
+          - { name: zone}
+          - { name: net_sales, hasCurrency: true}
+  sales_through_by_location:
+      filter: location
+      allowStyles: [count]
+      columns:
+          - { name: zone}
+          - { name: sell_through_percentage, hasCurrency: true}
+  sales_gross_margin_by_location:
+      filter: location
+      allowStyles: [basic_line, stacked, pie]
+      columns:
+          - { name: location}
+          - { name: gross_margin, hasCurrency: true}
+      styles:
+          count:
+              - { name: zone }
+              - { name: gross_margin, hasCurrency: true}
+
+{
+    "columns":[
+        {
+            "name" : "location"
+        },
+        {
+            "name": "net_sales",
+            "currency": "UZS"
+        }
+    ]
+}
+
+{
+    "category":"sales",
+    "type":"sales_by_location",
+    "style":"count",
+    "period":"this_month",
+    "columns":[
+      {
+        "name":"zone"
+      },
+      {
+        "name":"net_sales",
+        "currency":"UZS"
+      }
+    ],
+    "userGraphic":{
+      "position":[0, 0, 2, 3],
+      "filter":{
+        "location":[11],
+        "zone":2
+      }
+    }
+  }
